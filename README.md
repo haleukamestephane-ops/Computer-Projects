@@ -1,2 +1,13 @@
 # Computer-Projects
 Edit the README file
+
+| Name            | GitHub Username     | Personal Branch       | 
+|-----------------|---------------------|-----------------------|
+|HALEU KAME STEPH |haleukamestephane-ops| King-Stephane         |
+| Marie Ngo       | @marie25            | marie-ngo             |
+| Jean-Pierre     | @jp2025             | jean-pierre           |
+| Fatima          | @fatima99           | fatima-aboubakar      | 
+| Rose            | @rose2025           | rose-eyinga           |
+| …               | …                   | …                     | 
+
+**Branch naming rule:** Capitalized, hyphen, your real name → e.g. `King-Stephane`
