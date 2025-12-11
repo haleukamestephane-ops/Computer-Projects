@@ -32,4 +32,4 @@ def load_csv_files():
         print(f"Unexpected error !")
         load_csv_files()
 
-load_csv_files()
+
