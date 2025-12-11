@@ -8,6 +8,7 @@ Edit the README file
 | Jean-Pierre     | @jp2025             | jean-pierre           |
 | Fatima          | @fatima99           | fatima-aboubakar      | 
 | Rose            | @rose2025           | rose-eyinga           |
+| Tchakoute alban | Tchakoute-alban     | tchakoute-8           |
 | …               | …                   | …                     | 
 
 **Branch naming rule:** Capitalized, hyphen, your real name → e.g. `King-Stephane`
