@@ -9,6 +9,7 @@ Edit the README file
 | Fatima          | @fatima99           | fatima-aboubakar      | 
 | Rose            | @rose2025           | rose-eyinga           |
 | Tchakoute alban | Tchakoute-alban     | tchakoute-8           |
-| …               | …                   | …                     | 
+| TCHAKOUNTE STIVE| DOCTOR55            | DOCTOR-STYVEN         | 
+|…                | …                   | …                     | 
 
 **Branch naming rule:** Capitalized, hyphen, your real name → e.g. `King-Stephane`
