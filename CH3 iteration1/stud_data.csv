@@ -1,0 +1,16 @@
+Student_ID,Name,Semester,Course,Grade,Credits
+1001,Alex Johnson,Fall 2024,Mathematics,B+,3
+1001,Alex Johnson,Fall 2024,English,A,3
+1001,Alex Johnson,Fall 2024,Physics,C,4
+1002,Maria Garcia,Fall 2024,Mathematics,A,3
+1002,Maria Garcia,Fall 2024,English,A-,3
+1002,Maria Garcia,Fall 2024,Physics,B+,4
+1003,David Lee,Fall 2024,Mathematics,D,3
+1003,David Lee,Fall 2024,English,C+,3
+1003,David Lee,Fall 2024,Physics,F,4
+1004,Sophie Williams,Fall 2024,Mathematics,A,3
+1004,Sophie Williams,Fall 2024,English,B,3
+1004,Sophie Williams,Fall 2024,Physics,A-,4
+1005,James Smith,Fall 2024,Mathematics,F,3
+1005,James Smith,Fall 2024,English,D,3
+1005,James Smith,Fall 2024,Physics,F,4
