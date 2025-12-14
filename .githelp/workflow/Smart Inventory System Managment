@@ -1,0 +1,136 @@
+import matplotlib.pyplot as plot
+from datetime import datetime
+import json
+inventory = {
+    "apple":50,
+    "banana":30,
+    "beans":10,
+    "orange":0
+}
+out_of_stock = {"orange"}
+
+def save_inventory(filename):
+    data = {
+            "inventory": inventory,
+            "out_of_stock": list(out_of_stock)
+    }
+
+    with open(filename,"w") as file:
+        json.dump(data, file, indent=4)
+        print("Successfully save inventory")
+    return data
+
+def load_inventory(filename,data):
+    global inventory, out_of_stock
+    try:
+        with open(filename,"r") as file: 
+            inventory = data["inventory"]
+            out_of_stock = set(data["out_of_stock"])
+
+    except FileNotFoundError:
+        print("saved file not found")
+
+
+def show_menu():
+    print("1. view item")
+    print("2. add item")
+    print("3. update item")
+    print("4. remove item")
+    print("5. view out_of_stock")
+    print("6. search item")
+    print("7. Statistical Report")
+    print("8. Charts")
+    print("9. Exit")
+
+def view_item():
+    print("/n current item available: ")
+    item_name = input("please enter item name")
+    if item_name in inventory:
+        print(f"{item_name}: {inventory[item_name]} in stock" )
+
+def add_item():
+    name = input("Please enter the item name: ")
+    qty = int(input("Please enter the amount: "))
+    inventory[name] = qty
+    log_txn(name,qty)
+    print(name+ ":" + str(qty))
+
+def update_item():
+    old = (input("Enter Name to Update: "))
+    if old in inventory:
+        new = input("Enter new name: ")
+        qty = int(input("Enter new quantity: "))
+        if new != old:
+         inventory[new] = inventory.pop(old)
+         inventory[new] = qty
+         log_txn(new,qty)
+        else:
+            print("item not found")
+
+def remove_item():
+    view_item()
+    name = input("Please $nter number you wish o remove: ")
+    qty = int("Please enter quantity: ")
+    if name and qty in inventory:
+        del inventory[name]
+        del inventory[qty]
+        log_txn(name,qty)
+    else:
+        print(" Item not found")
+
+def View_out_of_stock():
+    out =[item for item,qty in inventory.items() if qty==0]
+    print("Out of stock: ", out)
+
+def quick_look_up():
+    name = input("Name: ").strip()
+    print("found" if name in inventory else "Not Found")
+
+def show_stats():
+    print("Total Item Catalog: ", len(inventory))
+    print("Total Value: ", sum(inventory.values()))
+
+def log_txn(item,qty):
+    with open("log_txn","a") as f:
+        f.write(f"{datetime.now():%d-%m-%Y %H:%M:%S} {item} {qty:+}/n")
+
+def draw_chart():
+    if not inventory:
+        print("Nothing to plot")
+        return
+    plot.bar(inventory.keys(), inventory.values())
+    plot.title("inventory levels")
+    plot.xlabel("items")
+    plot.ylabel("Qty")
+    plot.show()
+
+fname = "inventory_data.json"
+show_menu()
+data = save_inventory(fname)
+load_inventory(fname,data)
+
+# main function
+choice = 0
+while choice != 6:
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        view_item()
+    elif choice == 2:
+        add_item()
+    elif choice == 3:
+        update_item()
+    elif choice == 4:
+        remove_item()
+    elif choice == 5:
+        View_out_of_stock()
+    elif choice == 6:
+        quick_look_up()
+    elif choice == 7:
+        show_stats()
+    elif choice == 8:
+        draw_chart()
+    elif choice == 9:
+        print("Good bye user")
+        break
+        
